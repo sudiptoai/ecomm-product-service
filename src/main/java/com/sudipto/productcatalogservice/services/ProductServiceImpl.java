@@ -34,7 +34,7 @@ public class ProductServiceImpl implements IProductService {
 
     @Override
     public List<Products> getAllProductsByCategory(String category) {
-        ResponseEntity<FakeStoreProductDTO[]> fakeStoreProductsByCategory = restTemplate.getForEntity("https://fakestoreapi.com/products/category/" + category, FakeStoreProductDTO[].class, category);
+        ResponseEntity<FakeStoreProductDTO[]> fakeStoreProductsByCategory = restTemplate.getForEntity("https://fakestoreapi.com/products/category/" + category, FakeStoreProductDTO[].class);
         List<Products> products = new ArrayList<>();
         for (FakeStoreProductDTO fakeStoreProduct: fakeStoreProductsByCategory.getBody()){
             products.add(fakeStoreProduct.covertToProducts());
