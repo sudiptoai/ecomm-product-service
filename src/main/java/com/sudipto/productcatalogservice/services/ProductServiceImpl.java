@@ -1,9 +1,7 @@
 package com.sudipto.productcatalogservice.services;
 
 import com.sudipto.productcatalogservice.dtos.FakeStoreProductDTO;
-import com.sudipto.productcatalogservice.dtos.ProductResponseDTO;
 import com.sudipto.productcatalogservice.models.Products;
-import com.sudipto.productcatalogservice.repositories.ProductRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;

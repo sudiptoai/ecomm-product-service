@@ -1,10 +1,8 @@
 package com.sudipto.productcatalogservice.controllers;
 
-import com.sudipto.productcatalogservice.dtos.ProductRequestDTO;
 import com.sudipto.productcatalogservice.dtos.ProductResponseDTO;
 import com.sudipto.productcatalogservice.models.Products;
 import com.sudipto.productcatalogservice.services.IProductService;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
