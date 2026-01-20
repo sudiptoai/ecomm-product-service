@@ -36,4 +36,14 @@ public class ProductController {
 
         return ResponseEntity.ok(productResponseDTO);
     }
+
+    @GetMapping("/category/{category}")
+    public ResponseEntity<List<ProductResponseDTO>> getProductsByCategory(@PathVariable String category) {
+        List<Products> products = productService.getAllProductsByCategory(category);
+        List<ProductResponseDTO> productResponseDTOList = new ArrayList<>();
+        for (Products product : products) {
+            productResponseDTOList.add(product.toProductResponseDTO());
+        }
+        return ResponseEntity.ok(productResponseDTOList);
+    }
 }
