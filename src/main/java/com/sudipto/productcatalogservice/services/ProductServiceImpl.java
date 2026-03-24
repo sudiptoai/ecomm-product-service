@@ -44,6 +44,10 @@ public class ProductServiceImpl implements IProductService {
     public Products getProductsById(Long id) {
         ResponseEntity<FakeStoreProductDTO> fakeProduct = restTemplate.getForEntity("https://fakestoreapi.com/products/" + id, FakeStoreProductDTO.class, id);
         FakeStoreProductDTO fakeStoreProductDTO = fakeProduct.getBody();
+        // get products by filters
+        Products products = new Products();
+        products.setId(fakeStoreProductDTO.getId());
+        products.setPrice(fakeStoreProductDTO.getPrice());
         if(fakeProduct.getBody() != null) {
             return fakeStoreProductDTO.covertToProducts();
         }
